@@ -45,3 +45,11 @@ body {
 	margin: 0 auto;
 	padding: 0 1.5rem;
 }
+
+.logo {
+	transition: opacity 0.5s ease-in-out;
+
+	&:hover {
+		opacity: 0.5;
+	}
+}

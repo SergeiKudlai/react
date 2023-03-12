@@ -15,6 +15,7 @@ const devServer = (isDev) =>
                       directory: path.join(__dirname, 'assets/'),
                       serveIndex: true,
                   },
+                  historyApiFallback: true,
               },
           };
 

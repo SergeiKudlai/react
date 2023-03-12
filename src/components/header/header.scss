@@ -1,0 +1,27 @@
+.header {
+    background-color: var(--gray);
+
+    &__container {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__list {
+        display: flex;
+        flex: 1 1 auto;
+        justify-content: center;
+        column-gap: 1.5rem;
+    }
+
+    &__link {
+        &.active {
+            color:var(--blue);
+        }
+    }
+}

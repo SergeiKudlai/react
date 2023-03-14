@@ -1,8 +1,3 @@
-export interface IProps {
-    children: JSX.Element[];
-    className: string;
-}
-
 export interface IData {
     id: number;
     category: string;
@@ -14,4 +9,12 @@ export interface IData {
         count: number;
         rate: number;
     };
+}
+
+export interface IFuncProps {
+    updateData: (params: string) => void;
+}
+
+export interface INewString {
+    updateStringSearch: string;
 }

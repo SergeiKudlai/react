@@ -1,13 +1,19 @@
 import { Component, ChangeEvent } from 'react';
+import { IFuncProps } from '../../ts/interface';
 
-export class Search extends Component {
+export class Search extends Component<IFuncProps> {
     public state: { value: string };
 
-    constructor(props: string) {
+    constructor(props: IFuncProps) {
         super(props);
         this.state = {
             value: '',
         };
+    }
+
+    setParamsAssociatione(e: ChangeEvent) {
+        const { target } = e;
+        return (target as HTMLInputElement).value;
     }
 
     getFunction = (e: ChangeEvent) => {
@@ -16,20 +22,20 @@ export class Search extends Component {
     };
 
     getTextSearch = (e: ChangeEvent) => {
-        const { target } = e;
-        const searchData = (target as HTMLInputElement).value;
-        this.setState({ value: searchData });
+        this.setState({ value: this.setParamsAssociatione(e) });
+        this.props.updateData(this.setParamsAssociatione(e));
     };
 
     setLocalStorageValue = (e: ChangeEvent) => {
-        const { target } = e;
-        const searchData = (target as HTMLInputElement).value;
-        localStorage.setItem('text', JSON.stringify(searchData));
+        localStorage.setItem('text', JSON.stringify(this.setParamsAssociatione(e)));
     };
 
     componentDidMount() {
         const localValid = localStorage.getItem('text');
-        localValid ? this.setState({ value: JSON.parse(localValid) }) : '';
+        if (localValid) {
+            this.setState({ value: JSON.parse(localValid) });
+            this.props.updateData(JSON.parse(localValid));
+        }
     }
 
     render() {

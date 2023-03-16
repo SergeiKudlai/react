@@ -22,11 +22,19 @@
             "dom.iterable"
         ],
     },
+    "types": [
+        "reflect-metadata",
+        "jest",
+        "@testing-library/jest-dom"
+    ],
     "exclude": [
         "node_modules",
     ],
     "include": [
         "src/**/*",
         "declare.d.ts"
+    ],
+    "typeRoots": [
+        "../node_modules/@types"
     ]
 }

@@ -54,7 +54,7 @@ module.exports = ({ develop }) => ({
                                     runtime: 'automatic',
                                 },
                             ],
-                            '@babel/preset-env',
+                            ['@babel/preset-env', { targets: { node: 'current' } }],
                             '@babel/preset-typescript',
                         ],
                     },

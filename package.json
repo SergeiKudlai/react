@@ -10,7 +10,7 @@
         "clear": "rd /s /q dist",
         "lint": "eslint --ext .ts,.tsx --fix --color",
         "prepare": "husky install",
-        "test": "jest --env=jsdom",
+        "test": "jest --env=jsdom --runInBand",
         "test:watch": "jest --runInBand --watchAll"
     },
     "repository": {
@@ -74,6 +74,7 @@
         "jest": "^29.5.0",
         "jest-dom": "^4.0.0",
         "jest-environment-jsdom": "^29.5.0",
+        "jest-transform-css": "^6.0.1",
         "jsdom": "^21.1.1",
         "lint-staged": "^13.2.0",
         "prettier": "^2.8.1",

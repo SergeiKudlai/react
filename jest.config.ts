@@ -2,7 +2,7 @@ import type { Config } from 'jest';
 
 const config: Config = {
     verbose: true,
-    // testEnvironment: 'jsdom',
+    setupFilesAfterEnv: ['<rootDir>/src/setupTest.ts'],
 };
 
 export default config;

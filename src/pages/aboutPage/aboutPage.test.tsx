@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import { AboutPage } from './aboutPage';
 
-test('title', () => {
-    render(<AboutPage />);
-    const title = screen.getByAltText(/About Page/i);
-    expect(title).toBeInTheDocument();
+describe('About', () => {
+    it('render component About Page', () => {
+        render(<AboutPage />);
+        screen.debug();
+        expect(screen.getByText(/about page/i)).toBeInTheDocument();
+    });
 });

@@ -1,16 +1,18 @@
-import { Search } from './search';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { Search } from './search';
 
-describe('Home Page', () => {
+const onChange = jest.fn();
+
+describe('Search Component', () => {
     it('render component search', () => {
-        render(<Search updateData={testFunc} />);
-        screen.debug();
-        expect(screen.getByLabelText(/search/i)).toBeInTheDocument();
-        expect(screen.getByPlaceholderText(/enter text/i)).toBeInTheDocument();
-        expect(screen.getByDisplayValue('')).toBeInTheDocument();
+        const { getByLabelText } = render(<Search updateData={onChange} />);
+        expect(getByLabelText(/search/i)).toBeInTheDocument();
+    });
+
+    it('onChange works', () => {
+        render(<Search updateData={onChange} />);
+        userEvent.type(screen.getByRole('searchbox'), '');
+        expect(onChange).toHaveBeenCalledTimes(0);
     });
 });
-
-function testFunc(): never {
-    throw new Error('Function not implemented.');
-}

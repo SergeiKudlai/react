@@ -45,6 +45,7 @@ export class Search extends Component<IFuncProps> {
                 <input
                     className="home__search"
                     type="search"
+                    aria-label="search"
                     id="search"
                     name="search"
                     placeholder="Enter text"

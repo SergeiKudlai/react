@@ -6,12 +6,12 @@
     "scripts": {
         "build": "webpack",
         "watch": "webpack --watch",
-        "dev": "webpack serve --env develop",
+        "start": "webpack serve --env develop",
         "clear": "rd /s /q dist",
         "lint": "eslint --ext .ts,.tsx --fix --color",
         "prepare": "husky install",
         "test": "jest --env=jsdom --runInBand --coverage",
-        "test:watch": "jest --runInBand --watchAll"
+        "test:watch": "jest --env=jsdom --runInBand --watchAll --coverage"
     },
     "repository": {
         "type": "git",

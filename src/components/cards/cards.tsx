@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { getResponseData } from '../../ts/api';
 import { IData, INewString } from '../../ts/interface';
+
 import './cards.scss';
 
 export class Cards extends Component<INewString> {

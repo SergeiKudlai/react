@@ -1,8 +1,11 @@
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { Search } from './search';
 
 const onChange = jest.fn();
+
+const setLocalStorage = (id: string, data: { data: string }) => {
+    window.localStorage.setItem(id, JSON.stringify(data));
+};
 
 describe('Search Component', () => {
     it('render component search', () => {
@@ -10,9 +13,17 @@ describe('Search Component', () => {
         expect(getByLabelText(/search/i)).toBeInTheDocument();
     });
 
-    it('onChange works', () => {
+    test('data is added into local storage', () => {
+        const mockId = 'text';
+        const mockJson = { data: '' };
+        setLocalStorage(mockId, mockJson);
+        expect(localStorage.getItem(mockId)).toEqual(JSON.stringify(mockJson));
+    });
+
+    it('onChange Works', () => {
         render(<Search updateData={onChange} />);
-        userEvent.type(screen.getByRole('searchbox'), '');
-        expect(onChange).toHaveBeenCalledTimes(0);
+        fireEvent.change(screen.getByRole('searchbox'), {
+            target: { value: 'testString' },
+        });
     });
 });

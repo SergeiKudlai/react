@@ -1,0 +1,47 @@
+@import "../../scss/mixin.scss";
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(auto, 30rem));
+    justify-content: center;
+    gap: 1.5rem;
+
+    &__loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50vh;
+    }
+}
+
+.card {
+    border: 1px solid var(--gray);
+    height: 100%;
+    padding: 1rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 1rem;
+
+    &__title {
+        text-align: center;
+    }
+
+    &__category {
+        text-align: center;
+    }
+
+    &__price {
+        align-self: center;
+    }
+
+    &__img {
+        object-fit: contain;
+        align-self: center;
+    }
+
+    &__text {
+        @include line-clamp(14, 1.4, 3);
+    }
+}

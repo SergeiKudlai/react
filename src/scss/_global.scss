@@ -1,0 +1,66 @@
+html {
+	height: 100%;
+	font-size: 62.5%;
+}
+
+body {
+	height: 100%;
+	font-size: 1.6rem;
+	line-height: 1.4;
+	font-weight: 400;
+	font-family: "Open Sans", Verdana, sans-serif;
+	background-color: var(--white);
+	color: var(--black);
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	overflow: hidden;
+}
+
+.main {
+	flex: 1 0 auto;
+	position: relative;
+}
+
+.footer {
+	flex: 0 0 auto;
+}
+
+.container {
+	max-width: $cont_width + px;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+}
+
+.logo {
+	transition: opacity 0.5s ease-in-out;
+
+	&:hover {
+		opacity: 0.5;
+	}
+}
+
+.section {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}

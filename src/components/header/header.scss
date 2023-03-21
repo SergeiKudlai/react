@@ -19,9 +19,13 @@
         column-gap: 1.5rem;
     }
 
+    &__item--error {
+        color: var(--blue);
+    }
+
     &__link {
         &.active {
-            color:var(--blue);
+            color: var(--blue);
         }
     }
 }

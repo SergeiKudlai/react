@@ -3,14 +3,12 @@ import { NavLink, Link } from 'react-router-dom';
 import logo from '../../assets/img/icon/react_img.png';
 import './header.scss';
 
-export class Header extends Component<{ valid: boolean }> {
-    constructor(props: { valid: boolean }) {
+export class Header extends Component<{ title: string }> {
+    constructor(props: { title: string }) {
         super(props);
     }
 
     render() {
-        const { valid } = this.props;
-
         return (
             <header className="header">
                 <div className="header__container container">
@@ -31,9 +29,10 @@ export class Header extends Component<{ valid: boolean }> {
                                     About
                                 </NavLink>
                             </li>
-                            {valid ? <li className="header__item header__item--error">404</li> : ''}
                         </ul>
                     </nav>
+
+                    <h1 className="header__title">{`${this.props.title} Page`}</h1>
                 </div>
             </header>
         );

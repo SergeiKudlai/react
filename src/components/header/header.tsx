@@ -29,6 +29,12 @@ export class Header extends Component<{ title: string }> {
                                     About
                                 </NavLink>
                             </li>
+
+                            <li className="header__item">
+                                <NavLink className="header__link" to={'./form'}>
+                                    Form
+                                </NavLink>
+                            </li>
                         </ul>
                     </nav>
 

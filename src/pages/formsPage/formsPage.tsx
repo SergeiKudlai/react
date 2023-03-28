@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { IFuncProps } from '../../ts/interface';
 import { title_value } from '../../ts/enum';
+import { Forms } from '../../components/forms/forms';
 import './form.scss';
 
 export class FormsPage extends Component<IFuncProps> {
@@ -13,6 +14,7 @@ export class FormsPage extends Component<IFuncProps> {
         return (
             <section className="form section container">
                 <h1 className="form__title">Forms Page</h1>
+                <Forms />
             </section>
         );
     }
